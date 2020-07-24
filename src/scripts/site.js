@@ -2,22 +2,7 @@ $(document).ready(function(){
   // Anything you want to run once the page has loaded goes here... remove the // from the line below to check the JavaScript is reloading as expected
   // alert('hello world');
 
-  var settings = {
-  	"async": true,
-  	"crossDomain": true,
-  	"url": "https://accuweatherstefan-skliarovv1.p.rapidapi.com/get24HoursConditionsByLocationKey",
-  	"method": "POST",
-  	"headers": {
-  		"x-rapidapi-host": "AccuWeatherstefan-skliarovV1.p.rapidapi.com",
-  		"x-rapidapi-key": "03cea27b90msh979169fdef0e7f5p1a90cfjsn7cc16810642b",
-  		"content-type": "application/x-www-form-urlencoded"
-  	},
-  	"data": {
-  		"apiKey": "A3nqqGOEvaRJUnDv6fAbFVZDBBNTd2DS",
-  		"locationKey": "Thame, UK"
-  	}
-  }
+curl -s "https://auth.tado.com/oauth/token" -d grant_type=refresh_token -d refresh_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjYTc0NzdlMC1mNjBhLTQzNTktOTRhMC05ZWVlZGI2NGI3MGIiLCJ0YWRvX2hvbWVzIjpbeyJpZCI6NDk5NzgzfV0sImlzcyI6InRhZG8iLCJsb2NhbGUiOiJlbiIsImF1ZCI6InBhcnRuZXIiLCJuYmYiOjE1OTU1Mzk3MDUsInRhZG9fc2NvcGUiOlsiaG9tZS51c2VyIl0sInRhZG9fdXNlcm5hbWUiOiJuaWNrQG5pY2stZnJhbmNpcy5vcmciLCJhdGkiOiI3Y2EwNTI1Mi02ZDU3LTRkN2MtYTY2My01YzhmMzM1M2EwYTEiLCJuYW1lIjoiTmljayBGcmFuY2lzIiwiZXhwIjoxNTk4MTMxNzA1LCJpYXQiOjE1OTU1Mzk3MDUsInRhZG9fY2xpZW50X2lkIjoidGFkby13ZWItYXBwIiwianRpIjoiNmI5MGZiZGMtZjVkMi00MTM1LTgyODctZDgwMWVkY2Q3NWE3IiwiZW1haWwiOiJuaWNrQG5pY2stZnJhbmNpcy5vcmcifQ.gUvq0nk-cqaQWKQW3c0S-71cBIocWrx3O1qSXvMRAbhEAbpZlSEL2PM9woRtUPxKaj-dYgJqKX-jzDEx8z2kjuYEfYJy7Nl8Jyt6_nLmPwuG6EdiwqxQAFjDa5eeNU-PIVgYR03wsgZFBctNMrOv9UpXn_Jmf2tAAb1vyczwyvcbbMzr-p09bxN9c-k39Rp8cP2npW-XZcHDQKqRwzmUXxRHJhgiyv01G5OiDpMTLE3QJt2tnaSPPCXiWbaq82jBsPu1BC460ZtfUXwCdXNagI9ZkVDK-JP_1fimw9UX4N4sqdr79hczaWffeu9n_Rj6wdb8J7Y2IHPfk5fEUA0EJw -d client_id=tado-web-app -d scope=home.user -d client_secret=wZaRN7rpjn3FoNyF5IFuxg9uMzYJcvOoQ8QWiIqS3hfk6gLhVlG57j5YNoZL2Rtc
 
-  $.ajax(settings).done(function (response) {
-  	console.log(response);
+curl -s "https://acme.tado.com/v1/homes/499783/airComfort?latitude=51.748070&longitude=-0.97635" -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjYTc0NzdlMC1mNjBhLTQzNTktOTRhMC05ZWVlZGI2NGI3MGIiLCJ0YWRvX2hvbWVzIjpbeyJpZCI6NDk5NzgzfV0sImlzcyI6InRhZG8iLCJsb2NhbGUiOiJlbiIsImF1ZCI6InBhcnRuZXIiLCJuYmYiOjE1OTU1NDA1ODMsInRhZG9fc2NvcGUiOlsiaG9tZS51c2VyIl0sInRhZG9fdXNlcm5hbWUiOiJuaWNrQG5pY2stZnJhbmNpcy5vcmciLCJuYW1lIjoiTmljayBGcmFuY2lzIiwiZXhwIjoxNTk1NTQxMTgzLCJpYXQiOjE1OTU1NDA1ODMsInRhZG9fY2xpZW50X2lkIjoidGFkby13ZWItYXBwIiwianRpIjoiM2M5MGEzNTgtMzQ2Ni00Y2VmLWEyYzgtMzNjNjhjNzk5MTg2IiwiZW1haWwiOiJuaWNrQG5pY2stZnJhbmNpcy5vcmcifQ.FzjuC2VvvyE7GAFlqpYlnzUum4u-L0B1OY5DPNCciTyiRD9xEQ_QwR2HALkWpDBE2pIl6fpMY1fp0Q9tcbbrIPKlygt8cSGnp6d6twrRUAgTSxyBl31sEEN-su1EiWYdtKNFc5UCot3yVQ3JFAx8Whhj971ca4HhneFurwhKsiSy0F54j-6c8wYPFeTKHMdxm0xkOvmsBnegM4dff-arxuhMMLvjpCMNerYZdINrd-PpFSk-b1bEcG5IvucoV08YpsfYdbr2hzgUJtnmep8vublYpafpZQD_PWbQMiIKyMBbcIDuIUrIXsLEqWH35uwX45V_aPvdrbNj511tCCXmCw"
   });
